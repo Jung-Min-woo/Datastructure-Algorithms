@@ -5,13 +5,15 @@ int BSearch(int ar[], int len, int target) {
 	int end = len - 1;
 	while (1) {
 		idx = (start + end) / 2;
-		
 		if (ar[idx] == target)
 			return idx;
 		else if (ar[idx] < target)
 			start = idx + 1;
-		else if(ar[idx] >target)
+		else if(ar[idx] > target)
 			end = idx - 1;
+
+		if (start == end && ar[start] != target)
+			return -1;
 	}
 }
 int main(void) {
