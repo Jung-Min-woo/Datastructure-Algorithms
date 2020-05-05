@@ -9,12 +9,9 @@ int BSearch(int ar[], int len, int target) {
 		if (ar[idx] == target)
 			return idx;
 		else if (ar[idx] < target)
-			end = idx - 1;
-		else if(ar[idx] >target)
 			start = idx + 1;
-
-//		if (start - end == 0 || end - start == 1)
-//			return -1;
+		else if(ar[idx] >target)
+			end = idx - 1;
 	}
 }
 int main(void) {
