@@ -24,20 +24,20 @@ int BSearchRecur(int ar[], int start, int end, int target) {
 	else if (ar[idx] > target)
 		BSearchRecur(ar, start, idx - 1, target);
 }
-int main(void) {
-	int arr[] = { 1,3,5,7,9 };
-	int idx;
-
-	idx = BSearchRecur(arr,0, sizeof(arr) / sizeof(int)-1, 7);
-	if (idx == -1)
-		printf("Failed to search target\n");
-	else
-		printf("Target Index : %d\n", idx);
-
-	idx = BSearchRecur(arr, 0, sizeof(arr) / sizeof(int)-1, 4);
-	if (idx == -1)
-		printf("Failed to search target\n");
-	else
-		printf("Target Index  : %d\n", idx);
-	return 0;
-}
+//int main(void) {
+//	int arr[] = { 1,3,5,7,9 };
+//	int idx;
+//
+//	idx = BSearchRecur(arr,0, sizeof(arr) / sizeof(int)-1, 7);
+//	if (idx == -1)
+//		printf("Failed to search target\n");
+//	else
+//		printf("Target Index : %d\n", idx);
+//
+//	idx = BSearchRecur(arr, 0, sizeof(arr) / sizeof(int)-1, 4);
+//	if (idx == -1)
+//		printf("Failed to search target\n");
+//	else
+//		printf("Target Index  : %d\n", idx);
+//	return 0;
+//}
