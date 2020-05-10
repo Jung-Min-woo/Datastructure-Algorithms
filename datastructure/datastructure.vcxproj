@@ -138,6 +138,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="arraylist.c" />
     <ClCompile Include="bsearch.c" />
     <ClCompile Include="HanoiTower.c" />
   </ItemGroup>

@@ -8,7 +8,7 @@ void HanoiTowerMove(int num, char from, char by, char to) {
 		HanoiTowerMove(num - 1, by, from, to);
 	}
 }
-int main(void) {
-	HanoiTowerMove(2, 'A', 'B', 'C');
-	return 0;
-}
+//int main(void) {
+//	HanoiTowerMove(2, 'A', 'B', 'C');
+//	return 0;
+//}
