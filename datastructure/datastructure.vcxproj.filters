@@ -15,19 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="bsearch.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="HanoiTower.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="arraylist.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="Point.h">
       <Filter>헤더 파일</Filter>
     </ClCompile>
-    <ClCompile Include="linkedlist.c">
+    <ClCompile Include="linkedlist_basic.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
