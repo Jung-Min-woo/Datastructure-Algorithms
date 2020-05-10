@@ -1,8 +1,10 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 #include<stdlib.h>
 #include "Point.h"
+#include "NameCard.h"
 
-#define __data Point*
+#define __data NameCard*
 #define TRUE 1
 #define FALSE 0
 #define LIST_LEN 100
@@ -57,58 +59,62 @@ int LCount(List *plist) { return plist->numofData; }
 
 int main(void) {
 	List list;
-	Point compPos;	
-	Point *ppos;
-		
+	NameCard *pcard;
 	ListInit(&list);
 
-	ppos = (Point*)malloc(sizeof(Point));
-	SetPointPos(ppos, 2, 1);
-	LInsert(&list, ppos);
+	pcard = MakeNameCard("이진수", "010-1111-2222");
+	LInsert(&list, pcard);
 
-	ppos = (Point*)malloc(sizeof(Point));
-	SetPointPos(ppos, 2, 2);
-	LInsert(&list, ppos);
-
-	ppos = (Point*)malloc(sizeof(Point));
-	SetPointPos(ppos, 3, 1);
-	LInsert(&list, ppos);
-
-	ppos = (Point*)malloc(sizeof(Point));
-	SetPointPos(ppos, 3, 2);
-	LInsert(&list, ppos);
+	pcard = MakeNameCard("한지영", "010-3333-4444");
+	LInsert(&list, pcard);
 	
-	printf("NData : %d\n", LCount(&list));
-
-	if (LFirst(&list, &ppos)) {
-		ShowPointPos(ppos);
-		while (LNext(&list, &ppos))
-			ShowPointPos(ppos);
+	pcard = MakeNameCard("조수진", "010-5555-6666");
+	LInsert(&list, pcard);
+	
+	if (LFirst(&list, &pcard)) {
+		if (!NameCompare(pcard, "한지영"))
+			ShowNameInfo(pcard);
+		else
+			while (LNext(&list, &pcard)) {
+				if (!NameCompare(pcard, "한지영")) {
+					ShowNameInfo(pcard);
+					break;
+				}
+			}
 	}
-	printf("\n\n");
 	
-	compPos.xpos = 2;
-	compPos.ypos = 0;
-
-	if (LFirst(&list, &ppos)) {
-		if (PointComp(ppos, &compPos) ==1 ) {
-			ppos = LRemove(&list);
-			free(ppos);
-		}
-		while(LNext(&list, &ppos))
-			if (PointComp(ppos, &compPos) == 1) {
-				ppos = LRemove(&list);
-				free(ppos);
+	if (LFirst(&list, &pcard)) {
+		if (!NameCompare(pcard, "이진수"))
+			ChangePhoneNum(pcard, "010-9999-888");
+		else
+			while (LNext(&list, &pcard)) {
+				if (!NameCompare(pcard, "이진수")) {
+					ChangePhoneNum(pcard, "010-9999-888");
+					
+					break;
+				}
 			}
 	}
 
-	printf("Now NData is %d\n", LCount(&list));
-	if (LFirst(&list, &ppos)) {
-		ShowPointPos(ppos);
-		while (LNext(&list, &ppos))
-			ShowPointPos(ppos);
+	if (LFirst(&list, &pcard)) {
+		if (!NameCompare(pcard, "조수진")) {
+			pcard = LRemove(&list);
+			free(pcard);
+		}
+		else 
+			while(LNext(&list, &pcard)) 
+				if (!NameCompare(pcard, "조수진")) {
+					pcard = LRemove(&list);
+					free(pcard);
+					break;
+				}
 	}
-	printf("\n");
 
+	printf("현재 데이터 수 : %d\n", LCount(&list));
+	if (LFirst(&list, &pcard)) {
+		ShowNameInfo(pcard); 
+		while (LNext(&list, &pcard)) 
+			ShowNameInfo(pcard);
+	}
 	return 0;
 }
