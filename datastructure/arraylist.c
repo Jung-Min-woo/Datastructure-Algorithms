@@ -18,6 +18,10 @@ void ListInit(List *plist) {
 	plist->curPosition = 0;
 }
 void LInsert(List *plist, LData data) {
+	if (plist->numofData == LIST_LEN) {
+		puts("Max num of data Exceeded");
+		return;
+	}
 	plist->arr[plist->numofData++ ] = data;
 }
 int LFirst(List *plist, LData *pdata) {
@@ -38,6 +42,10 @@ int LNext(List *plist, LData *pdata) {
 		return FALSE;
 }
 LData LRemove(List *plist) {
+	if (plist->numofData == 0) {
+		puts("No data removable");
+		return plist->curPosition;
+	}
 	--plist->numofData;
 	return --plist->curPosition;
 }
@@ -53,7 +61,6 @@ int main(void) {
 	LInsert(&list, 33);
 
 	printf("현재 데이터의 수 : %d\n", LCount(&list));
-	printf("test: curPosition : %d\n", list.curPosition);
 	if (LFirst(&list, &data)) {
 		printf("%d ", data);
 
