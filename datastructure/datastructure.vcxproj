@@ -141,6 +141,7 @@
     <ClCompile Include="arraylist.c" />
     <ClCompile Include="bsearch.c" />
     <ClCompile Include="HanoiTower.c" />
+    <ClCompile Include="linkedlist.c" />
     <ClCompile Include="Point.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
