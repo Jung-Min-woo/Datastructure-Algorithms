@@ -1,21 +1,22 @@
 #include<stdio.h>
+#include<stdlib.h>
+#include "Point.h"
 
+#define __data Point*
 #define TRUE 1
 #define FALSE 0
-
 #define LIST_LEN 100
 
-typedef int LData;
+typedef __data LData;
 
 typedef struct List {
 	LData arr[LIST_LEN];
 	int numofData;
 	int curPosition;
 }List;
-
 void ListInit(List *plist) {
 	plist->numofData = 0;
-	plist->curPosition = 0;
+	plist->curPosition = -1;
 }
 void LInsert(List *plist, LData data) {
 	if (plist->numofData == LIST_LEN) {
@@ -42,50 +43,72 @@ int LNext(List *plist, LData *pdata) {
 		return FALSE;
 }
 LData LRemove(List *plist) {
-	if (plist->numofData == 0) {
+	int i = 0;
+	LData target = plist->arr[plist->curPosition--];
+	if (plist->numofData-- == 0) {
 		puts("No data removable");
-		return plist->curPosition;
+		return plist->arr[plist->curPosition];
 	}
-	--plist->numofData;
-	return --plist->curPosition;
+	for (i = plist->curPosition+1; i < plist->numofData+1; i++) 
+		plist->arr[i] = plist->arr[i + 1];
+	return target;
 }
 int LCount(List *plist) { return plist->numofData; }
 
 int main(void) {
 	List list;
-	int data;
+	Point compPos;	
+	Point *ppos;
+		
 	ListInit(&list);
 
-	LInsert(&list, 11); LInsert(&list, 11);
-	LInsert(&list, 22); LInsert(&list, 22);
-	LInsert(&list, 33);
+	ppos = (Point*)malloc(sizeof(Point));
+	SetPointPos(ppos, 2, 1);
+	LInsert(&list, ppos);
 
-	printf("현재 데이터의 수 : %d\n", LCount(&list));
-	if (LFirst(&list, &data)) {
-		printf("%d ", data);
+	ppos = (Point*)malloc(sizeof(Point));
+	SetPointPos(ppos, 2, 2);
+	LInsert(&list, ppos);
 
-		while (LNext(&list, &data))
-			printf("%d ", data);
+	ppos = (Point*)malloc(sizeof(Point));
+	SetPointPos(ppos, 3, 1);
+	LInsert(&list, ppos);
+
+	ppos = (Point*)malloc(sizeof(Point));
+	SetPointPos(ppos, 3, 2);
+	LInsert(&list, ppos);
+	
+	printf("NData : %d\n", LCount(&list));
+
+	if (LFirst(&list, &ppos)) {
+		ShowPointPos(ppos);
+		while (LNext(&list, &ppos))
+			ShowPointPos(ppos);
 	}
 	printf("\n\n");
+	
+	compPos.xpos = 2;
+	compPos.ypos = 0;
 
-	if (LFirst(&list, &data)) {
-		if (data == 22)
-			LRemove(&list);
-		while (LNext(&list, &data)) {
-			if (data == 22)
-				LRemove(&list);
+	if (LFirst(&list, &ppos)) {
+		if (PointComp(ppos, &compPos) ==1 ) {
+			ppos = LRemove(&list);
+			free(ppos);
 		}
+		while(LNext(&list, &ppos))
+			if (PointComp(ppos, &compPos) == 1) {
+				ppos = LRemove(&list);
+				free(ppos);
+			}
 	}
-	printf("현재 데이터의 수 : %d\n", LCount(&list));
-	if (LFirst(&list, &data)) {
-		printf("%d ", data);
 
-		while (LNext(&list, &data))
-			printf("%d ", data);
+	printf("Now NData is %d\n", LCount(&list));
+	if (LFirst(&list, &ppos)) {
+		ShowPointPos(ppos);
+		while (LNext(&list, &ppos))
+			ShowPointPos(ppos);
 	}
-	printf("\n\n");
+	printf("\n");
+
 	return 0;
 }
-
-
