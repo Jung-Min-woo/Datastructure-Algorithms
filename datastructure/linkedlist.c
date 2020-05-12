@@ -19,10 +19,31 @@ typedef struct _linkedlist {
 	int (*comp)(LData d1, LData d2);
 }List;
 
-void ListInit(List *plist);
-void LInsert(List *plist, LData data);
+void ListInit(List *plist) {
+	plist->numofData = 0;
+	plist->head = NULL;
+	plist->head->next = NULL;
+	plist->cur = NULL;
+	plist->before = NULL;
+}
+void LInsert(List *plist, LData data) {
+	Node *newNode = (Node*)malloc(sizeof(Node));
+		plist->before = plist->head->next;
+		plist->cur = plist->head->next->next;
+
+	newNode->data = data;
+	newNode->next = plist->head->next;
+	plist->head->next = newNode;
+	////cur&before pointer 
+	plist->before = plist->cur;
+	plist->cur = plist->cur->next;
+
+	plist->numofData++;
+}
 void SInsert(List *plist, LData data);
-int LFirst(List *plist, LData *pdata);
+int LFirst(List *plist, LData *pdata) {
+	plist->
+}
 int LNext(List *plist, LData *pdata);
 LData LRemove(List *plist);
 int LCount(List *plist);
