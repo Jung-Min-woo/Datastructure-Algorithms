@@ -138,6 +138,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="linkedlist.c" />
     <ClCompile Include="linkedlist_basic.c" />
     <ClCompile Include="Point.h" />
   </ItemGroup>

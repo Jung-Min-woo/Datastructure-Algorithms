@@ -21,5 +21,8 @@
     <ClCompile Include="linkedlist_basic.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="linkedlist.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
