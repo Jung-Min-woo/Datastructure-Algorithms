@@ -90,12 +90,15 @@ int LCount(List *plist) {
 void SetSortRule(List *plist, int(*comp)(LData d1, LData d2)) {
 	plist->comp = comp;
 }
-
+void bigger(int d1, int d2) {
+	return d1 < d2 ? 0 : 1;
+}
 int main(void) {
 	List list;
 	int data;
 	
 	ListInit(&list);
+	SetSortRule(&list, bigger);
 
 	LInsert(&list, 11); LInsert(&list, 11);
 	LInsert(&list, 22); LInsert(&list, 22);
