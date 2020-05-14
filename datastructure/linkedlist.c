@@ -20,38 +20,58 @@ typedef struct _linkedlist {
 }List;
 
 void ListInit(List *plist) {
+	Node *DummyNode = (Node*)malloc(sizeof(Node));
+	
 	plist->numofData = 0;
-	plist->head = NULL;
+	plist->head = DummyNode;
 	plist->head->next = NULL;
-	plist->cur = NULL;
 	plist->before = NULL;
+	plist->cur = NULL;
+	
 }
 void LInsert(List *plist, LData data) {
 	Node *newNode = (Node*)malloc(sizeof(Node));
-		plist->before = plist->head->next;
-		plist->cur = plist->head->next->next;
 
 	newNode->data = data;
 	newNode->next = plist->head->next;
 	plist->head->next = newNode;
-	////cur&before pointer 
-	plist->before = plist->cur;
-	plist->cur = plist->cur->next;
-
 	plist->numofData++;
 }
 void SInsert(List *plist, LData data);
 int LFirst(List *plist, LData *pdata) {
-	plist->
+	plist->before = plist->head;
+	plist->cur = plist->before->next;
+	if (plist->cur == NULL)
+		return FALSE;
+	*pdata = plist->cur->data;
+	return TRUE;
 }
-int LNext(List *plist, LData *pdata);
-LData LRemove(List *plist);
-int LCount(List *plist);
+int LNext(List *plist, LData *pdata) {
+	plist->before = plist->cur;
+	plist->cur = plist->cur->next;
+	if (plist->cur == NULL)
+		return FALSE;
+	*pdata = plist->cur->data;
+	return TRUE;
+}
+LData LRemove(List *plist) {
+	LData out = plist->cur->data;
+	plist->numofData--;
+	if(plist->before->next !=NULL)
+		plist->before->next = plist->before->next->next;
+	free(plist->cur);
+	plist->cur = plist->before;
+	return out;
+}
+int LCount(List *plist) {
+	return plist->numofData;
+}
 void SetSortRule(List *plist, int(*comp)(LData d1, LData d2));
 
 int main(void) {
 	List list;
 	int data;
+	
 	ListInit(&list);
 
 	LInsert(&list, 11); LInsert(&list, 11);
