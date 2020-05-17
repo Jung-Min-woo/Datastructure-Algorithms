@@ -1,4 +1,3 @@
-
 #include "linkedlist.h"
 #include "Point.h"
 #include <stdio.h>
@@ -8,7 +7,7 @@ int main(void) {
 	List list;
 	Point compPos;
 	Point *ppos;
-	
+
 	ListInit(&list);
 
 	ppos = (Point*)malloc(sizeof(Point));
