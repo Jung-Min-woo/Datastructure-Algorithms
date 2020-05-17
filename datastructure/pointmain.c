@@ -1,4 +1,3 @@
-
 #include "linkedlist.h"
 #include "Point.h"
 #include <stdio.h>
