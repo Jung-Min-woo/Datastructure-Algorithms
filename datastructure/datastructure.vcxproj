@@ -138,11 +138,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Point.h" />
-    <ClCompile Include="pointmain.c" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="linkedlist.h" />
+    <ClCompile Include="arraylist.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
