@@ -7,7 +7,7 @@
 #define TRUE 1
 #define FALSE 0
 
-#define CIRCULAR_LIST
+#define DOUBLY_LINKED_LIST
 
 typedef int LData;
 

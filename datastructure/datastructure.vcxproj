@@ -139,10 +139,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Point.h" />
-    <ClCompile Include="pointmain.c" />
+    <ClCompile Include="main.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="linkedlist.h" />
+    <ClInclude Include="stack.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
