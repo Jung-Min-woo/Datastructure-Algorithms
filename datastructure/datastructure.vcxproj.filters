@@ -26,7 +26,10 @@
     <ClInclude Include="linkedlist.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="stack.h">
+    <ClInclude Include="stack_array.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="stack_linkedlist.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

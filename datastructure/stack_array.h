@@ -18,12 +18,8 @@ typedef ArrayStack Stack;
 void StackInit(Stack *pstack) {
 	pstack->topIndex = -1;
 }
-int SIsEmpty(Stack *pstack) {
-	return pstack->topIndex == -1 ? TRUE : FALSE;
-}
-void SPush(Stack *pstack, Data data) {
-	pstack->stackArr[++pstack->topIndex] = data;
-}
+int SIsEmpty(Stack *pstack) { return pstack->topIndex == -1 ? TRUE : FALSE; }
+void SPush(Stack *pstack, Data data) {pstack->stackArr[++pstack->topIndex] = data;}
 Data SPop(Stack *pstack) {
 	if (pstack->topIndex == -1) {
 		printf("Stack Memory Error!\n");

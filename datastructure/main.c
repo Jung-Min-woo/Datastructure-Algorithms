@@ -1,4 +1,4 @@
-#include "stack.h"
+#include "stack_linkedlist.h"
 #include "Point.h"
 #include <stdio.h>
 #include <stdlib.h>

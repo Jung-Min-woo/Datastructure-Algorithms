@@ -143,7 +143,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="linkedlist.h" />
-    <ClInclude Include="stack.h" />
+    <ClInclude Include="stack_array.h" />
+    <ClInclude Include="stack_linkedlist.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
