@@ -7,8 +7,12 @@
 #define FALSE 0
 #define STACK_LEN 100
 
+//typedef union _Data {
+//	int intVal;
+//	double doubleVal;
+//	char Operator;
+//}Data;
 typedef int Data;
-
 typedef struct _node {
 	Data data;
 	struct _node *next;
@@ -25,7 +29,7 @@ void StackInit(Stack *pstack);
 int SIsEmpty(Stack *pstack);
 void SPush(Stack *pstack, Data data);
 Data SPop(Stack *pstack);
-Data SPeek(Stack *pstack);
+Data SPeek(Stack *pstack);	
 
 void StackInit(Stack *pstack) {
 	pstack->head = NULL;

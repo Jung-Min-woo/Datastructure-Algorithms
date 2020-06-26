@@ -138,11 +138,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="calc.c" />
     <ClCompile Include="Point.h" />
     <ClCompile Include="main.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="linkedlist.h" />
+    <ClInclude Include="calc.h" />
     <ClInclude Include="stack_array.h" />
     <ClInclude Include="stack_linkedlist.h" />
   </ItemGroup>

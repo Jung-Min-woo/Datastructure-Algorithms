@@ -1,19 +1,20 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include "stack_linkedlist.h"
 #include "Point.h"
+#include "calc.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 int main(void) {
-	Stack stack;
-	StackInit(&stack);
-
-	SPush(&stack, 1);
-	SPush(&stack, 2);
-	SPush(&stack, 3);
-	SPush(&stack, 4);
-	SPush(&stack, 5);
-
-	while (!SIsEmpty(&stack))
-		printf("%d ", SPop(&stack));
+	int i = 0;
+	Stack *s= (Stack*)malloc(sizeof(Stack));
+	StackInit(s);
+	SPush(s, 1);
+	SPush(s, 2);
+	SPush(s, 3);
+	SPush(s, 4);
+	SPush(s, 5);
+	while(SIsEmpty(s) == FALSE) printf("%d\n", SPop(s));
 	return 0;
 }
