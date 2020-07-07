@@ -15,24 +15,12 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Point.h">
-      <Filter>헤더 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="main.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="calc.c">
+    <ClCompile Include="main.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="stack_array.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="stack_linkedlist.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="calc.h">
+    <ClInclude Include="cpp_stack_list.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

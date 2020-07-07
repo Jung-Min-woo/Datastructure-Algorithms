@@ -138,14 +138,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="calc.c" />
-    <ClCompile Include="Point.h" />
-    <ClCompile Include="main.c" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="calc.h" />
-    <ClInclude Include="stack_array.h" />
-    <ClInclude Include="stack_linkedlist.h" />
+    <ClInclude Include="cpp_stack_list.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
