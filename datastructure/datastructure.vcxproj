@@ -19,11 +19,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ListBaseQueue.h" />
+    <ClInclude Include="CircularQueue.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="circularmain.c" />
-    <ClCompile Include="ListBaseQueue.c" />
+    <ClCompile Include="CircularQueue.c" />
+    <ClCompile Include="HamburgerSim.c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
