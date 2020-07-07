@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "CircularQueue.h"
+#include "ListBaseQueue.h"
 
 int main(void) {
 	Queue q;
