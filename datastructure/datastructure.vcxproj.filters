@@ -15,15 +15,15 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Deque.h">
+    <ClInclude Include="BinaryTree.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Deque.c">
+    <ClCompile Include="BinaryTree.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="DequeMain.c">
+    <ClCompile Include="BinaryTreeMain.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

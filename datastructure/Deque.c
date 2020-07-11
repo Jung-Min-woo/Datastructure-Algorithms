@@ -5,7 +5,7 @@
 void DequeInit(Deque * pq)
 {
 	pq->head = NULL;
-	pq->tail = NULL;
+	pq->tail = pq->tail;
 }
 
 int DQIsEmpty(Deque * pq)
