@@ -1,6 +1,10 @@
 #include "BinaryTree.h"
 #include <stdio.h>
 
+
+void ShowIntData(int tgt) {
+	printf("%d ", tgt);
+}
 int main(void) {
 	BTreeNode *bt1 = MakeBTreeNode();
 	BTreeNode *bt2 = MakeBTreeNode();
@@ -19,5 +23,11 @@ int main(void) {
 	printf("%d \n", GetData(GetLeftSubTree(bt1)));
 	printf("%d \n", GetData(GetLeftSubTree(GetLeftSubTree(bt1))));
 
+	Traverse_InOrder(bt1, ShowIntData);
+	printf("\n");
+	Traverse_PostOrder(bt1, ShowIntData);
+	printf("\n");
+	Traverse_PreOrder(bt1, ShowIntData);
+	printf("\n");
 	return 0;
 }

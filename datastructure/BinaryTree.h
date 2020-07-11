@@ -2,6 +2,8 @@
 #define __BINARY_TREE_H__
 
 typedef int BTData;
+typedef void(*VisitFuncPtr)(BTData data);
+
 typedef struct _bTreeNode {
 	BTData data;
 	struct _bTreeNode *left;
@@ -17,7 +19,9 @@ BTreeNode* GetRightSubTree(BTreeNode *bt);
 
 void MakeLeftSubTree(BTreeNode *main, BTreeNode *sub);
 void MakeRightSubTree(BTreeNode *main, BTreeNode *sub);
-
 //Traverse
-void Traverse_InOrder
+void Traverse_InOrder(BTreeNode *target, VisitFuncPtr action);
+void Traverse_PreOrder(BTreeNode *target, VisitFuncPtr action);
+void Traverse_PostOrder(BTreeNode *target, VisitFuncPtr action);
+
 #endif
