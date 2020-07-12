@@ -15,24 +15,15 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BinaryTree.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="ExpressionTree.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="stack_linkedlist.h">
+    <ClInclude Include="SimpleHeap.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="BinaryTree.c">
+    <ClCompile Include="SimpleHeap.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="ExpressionTree.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="ExpressionMain.c">
+    <ClCompile Include="SimpleHeapMain.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
