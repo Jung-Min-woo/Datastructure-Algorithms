@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #include <stdlib.h>
 #include "BinaryTree.h"
@@ -32,7 +31,6 @@ void Traverse_InOrder(BTreeNode * target, VisitFuncPtr action)
 	action(target->data);
 	Traverse_InOrder(target->right, action);
 }
-
 void Traverse_PreOrder(BTreeNode * target, VisitFuncPtr action)
 {
 	if (target == NULL) return;
@@ -40,11 +38,17 @@ void Traverse_PreOrder(BTreeNode * target, VisitFuncPtr action)
 	Traverse_PreOrder(target->left, action);
 	Traverse_PreOrder(target->right, action);
 }
-
 void Traverse_PostOrder(BTreeNode * target, VisitFuncPtr action)
 {
 	if (target == NULL) return;
 	Traverse_PostOrder(target->left, action);
 	Traverse_PostOrder(target->right, action);
 	action(target->data);
+}
+
+void DeleteTree(BTreeNode *target) {
+	if (target == NULL) return;
+	DeleteTree(target->left);
+	DeleteTree(target->right);
+	free(target);
 }

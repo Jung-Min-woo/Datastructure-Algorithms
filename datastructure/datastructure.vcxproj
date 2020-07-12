@@ -20,10 +20,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BinaryTree.h" />
+    <ClInclude Include="ExpressionTree.h" />
+    <ClInclude Include="stack_linkedlist.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BinaryTree.c" />
-    <ClCompile Include="BinaryTreeMain.c" />
+    <ClCompile Include="ExpressionMain.c" />
+    <ClCompile Include="ExpressionTree.c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

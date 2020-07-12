@@ -23,5 +23,5 @@ void MakeRightSubTree(BTreeNode *main, BTreeNode *sub);
 void Traverse_InOrder(BTreeNode *target, VisitFuncPtr action);
 void Traverse_PreOrder(BTreeNode *target, VisitFuncPtr action);
 void Traverse_PostOrder(BTreeNode *target, VisitFuncPtr action);
-
+void DeleteTree(BTreeNode *target);
 #endif

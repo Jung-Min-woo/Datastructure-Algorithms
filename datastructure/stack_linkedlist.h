@@ -12,7 +12,7 @@
 //	double doubleVal;
 //	char Operator;
 //}Data;
-typedef int Data;
+typedef BTreeNode* Data;
 typedef struct _node {
 	Data data;
 	struct _node *next;

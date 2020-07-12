@@ -1,11 +1,13 @@
 #include "BinaryTree.h"
 #include <stdio.h>
-
+#include <stdlib.h>
 
 void ShowIntData(int tgt) {
 	printf("%d ", tgt);
 }
 int main(void) {
+	int *k1 = (int*)malloc(sizeof(k1));
+	
 	BTreeNode *bt1 = MakeBTreeNode();
 	BTreeNode *bt2 = MakeBTreeNode();
 	BTreeNode *bt3 = MakeBTreeNode();
@@ -29,5 +31,7 @@ int main(void) {
 	printf("\n");
 	Traverse_PreOrder(bt1, ShowIntData);
 	printf("\n");
+	
+	DeleteTree(bt1);
 	return 0;
 }
