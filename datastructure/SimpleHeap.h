@@ -8,7 +8,7 @@
 
 typedef char HData;
 typedef int Priority;
-
+typedef int (*PriorityComp)(HData d1, HData d2);
 typedef struct _heapElem {
 	Priority pr;
 	HData data;

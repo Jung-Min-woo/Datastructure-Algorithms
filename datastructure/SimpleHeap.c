@@ -1,9 +1,11 @@
 #include "SimpleHeap.h"
 #include <stdio.h>
+#include "UsefulHeap.h"
 
-void HeapInit(Heap * ph)
+void HeapInit(Heap * ph, PriorityComp pc)
 {
 	ph->numofData = 0;
+	ph->comp = pc;
 }
 
 int HIsEmpty(Heap * ph)
