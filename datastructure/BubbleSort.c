@@ -1,16 +1,32 @@
 #include <stdio.h>
-
-
 void BubbleSort(int arr[], int n);
+void SelSort(int arr[], int n);
 
 int main(void) {
 	int arr[4] = { 3,2,4,1 };
 	int i;
-	BubbleSort(arr, sizeof(arr) / sizeof(int));
+	SelSort(arr, sizeof(arr) / sizeof(int));
 	for (int i = 0; i < 4; i++)
 		printf("%d ", arr[i]);
 	printf("\n");
 	return 0;
+}
+
+void SelSort(int arr[], int n) {
+	int temp= arr[0], target=0, idx = 0;
+	int i;
+	for (i = 1; i < n;) {
+		if (temp  > arr[i]) temp = arr[idx=i];
+		if (i == n - 1) {
+			arr[idx] = arr[target];
+			arr[target] = temp;
+			i = (idx = ++target) + 1;
+			temp = arr[target];
+			if (target == n - 1) return;
+			continue;
+		}
+		i++;
+	}
 }
 
 void BubbleSort(int arr[], int n) {
