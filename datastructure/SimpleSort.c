@@ -12,13 +12,14 @@ int main(void) {
 	return 0;
 }
 void InserSort(int arr[], int n) {
-	int i, j, idx, temp;
+	int i, j, temp;
 	for (i = 1; i < n; i++) {
-		temp = arr[idx=i];
-		for (j = 0; j < i; j++) if (arr[j] > arr[i])break;
-		idx = j;
-		for (j = i; j >=idx; j--) arr[j] = arr[j-1];
-		arr[idx] = temp;
+		temp = arr[i];
+		for (j = i-1; j >=0; j--) {
+			if (arr[j] > temp) arr[j + 1] = arr[j];
+			else break;
+		}
+		arr[j+1] = temp;
 	}
 }
 void SelSort(int arr[], int n) {
