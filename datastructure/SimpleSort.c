@@ -14,20 +14,11 @@ int main(void) {
 void InserSort(int arr[], int n) {
 	int i, j, idx, temp;
 	for (i = 1; i < n; i++) {
-		temp = arr[i];
-		idx = i;
-		for (j = 0; j < i; j++) {
-			if (arr[j] > arr[i]) {
-				idx = j;
-				break;
-			}
-		}
-		printf("idx : %d, temp: %d\n", idx, temp);
-		for (j = i; j >=idx; j--) {
-			arr[j] = arr[j-1];
-		}
+		temp = arr[idx=i];
+		for (j = 0; j < i; j++) if (arr[j] > arr[i])break;
+		idx = j;
+		for (j = i; j >=idx; j--) arr[j] = arr[j-1];
 		arr[idx] = temp;
-		printf("arr: %d %d %d %d\n", arr[0], arr[1], arr[2], arr[3]);
 	}
 }
 void SelSort(int arr[], int n) {
@@ -46,7 +37,6 @@ void SelSort(int arr[], int n) {
 		i++;
 	}
 }
-
 void BubbleSort(int arr[], int n) {
 	int temp;
 	int i;
