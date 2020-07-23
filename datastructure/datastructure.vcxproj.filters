@@ -15,7 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="QuickSort.c">
+    <ClCompile Include="RadixSort.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="ListBaseQueue.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
