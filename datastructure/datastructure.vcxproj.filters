@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="RecursiveBinarySearch.c">
+    <ClCompile Include="InterpolSearch.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
