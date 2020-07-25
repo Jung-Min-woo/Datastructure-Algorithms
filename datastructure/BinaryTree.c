@@ -52,3 +52,33 @@ void DeleteTree(BTreeNode *target) {
 	DeleteTree(target->right);
 	free(target);
 }
+
+BTreeNode * RemoveLeftSubTree(BTreeNode * bt)
+{
+	BTreeNode *delNode = NULL;
+	if (bt != NULL) {
+		delNode = bt->left;
+		bt->left = NULL;
+	}
+	return delNode;
+}
+
+BTreeNode * RemoveRightSubTree(BTreeNode * bt)
+{
+	BTreeNode *delNode = NULL;
+	if (bt != NULL) {
+		delNode = bt->right;
+		bt->left = NULL;
+	}
+	return delNode;
+}
+
+void ChangeLeftSubTree(BTreeNode * main, BTreeNode * sub)
+{
+	main->left = sub;//replace main->left :: sub 
+}
+
+void ChangeRightSubTree(BTreeNode * main, BTreeNode * sub)
+{
+	main->right = sub;
+}

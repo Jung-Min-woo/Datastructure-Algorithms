@@ -15,6 +15,14 @@ int main(void) {
 	BSTInsert(&bstRoot, 3);
 	BSTInsert(&bstRoot, 5);
 
+	BSTshowAll(bstRoot); printf("\n");
+	sNode = BSTRemove(&bstRoot, 3);
+	free(sNode);
+
+	BSTshowAll(bstRoot); printf("\n");
+	sNode = BSTRemove(&bstRoot, 8);
+	free(sNode);
+
 
 	sNode = BSTSearch(bstRoot, 1);
 	if (sNode == NULL) printf("Search Failed\n");
@@ -23,5 +31,8 @@ int main(void) {
 	sNode = BSTSearch(bstRoot, 4);
 	if (sNode == NULL) printf("Search Failed\n");
 	else printf("Height : %d\n", BSTGetNodeData(sNode));
+
+
+
 	return 0;
 }
