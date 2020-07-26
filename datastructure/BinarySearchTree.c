@@ -3,15 +3,11 @@
 #include <stdlib.h>
 
 void BSTMakeAndInit(BTreeNode ** pRoot)
-{
-	*pRoot = NULL;
-}
-
+{ *pRoot = NULL; }
 BSTData BSTGetNodeData(BTreeNode * bst)
 {
 	return GetData(bst);
 }
-
 void BSTInsert(BTreeNode ** pRoot, BSTData data)
 {
 	if (*pRoot == NULL) {
@@ -57,7 +53,6 @@ BTreeNode * BSTSearch(BTreeNode * bst, BSTData target)
 	}
 	return NULL;
 }
-
 BTreeNode * BSTRemove(BTreeNode ** pRoot, BSTData target)
 {
 	BTreeNode *pvRoot = MakeBTreeNode();
