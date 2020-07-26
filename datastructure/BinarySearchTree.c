@@ -1,4 +1,5 @@
 #include "BinarySearchTree.h"
+#include "AVLRebalance.h"
 #include <stdlib.h>
 
 void BSTMakeAndInit(BTreeNode ** pRoot)
@@ -13,23 +14,36 @@ BSTData BSTGetNodeData(BTreeNode * bst)
 
 void BSTInsert(BTreeNode ** pRoot, BSTData data)
 {
-	BTreeNode *pNode = NULL; // parent Node
-	BTreeNode *cNode = *pRoot; // current Node
-	BTreeNode *nNode = NULL; // new Node
-
-	while (cNode != NULL) {	
-		if (data == GetData(cNode)) return; // 데이터 중복을 허용하지 않음
-		pNode = cNode;	
-		if (GetData(cNode) > data) cNode = GetLeftSubTree(cNode);
-		else cNode = GetRightSubTree(cNode);
+	if (*pRoot == NULL) {
+		*pRoot = MakeBTreeNode();
+		SetData(*pRoot, data);
 	}
-	nNode = MakeBTreeNode();
-	SetData(nNode, data);
-	if (pNode != NULL) {
-		if (data < GetData(pNode)) MakeLeftSubTree(pNode, nNode);
-		else MakeRightSubTree(pNode, nNode);
+	else if (data < GetData(*pRoot)) {
+		BSTInsert(&(*pRoot)->left, data);
+		*pRoot = Rebalance(pRoot);
 	}
-	else *pRoot = nNode;
+	else if (data > GetData(*pRoot)) {
+		BSTInsert(&(*pRoot)->right, data);
+		*pRoot = Rebalance(pRoot);
+	}
+	else return NULL;
+	return *pRoot;
+	//BTreeNode *pNode = NULL; // parent Node
+	//BTreeNode *cNode = *pRoot; // current Node
+	//BTreeNode *nNode = NULL; // new Node
+	//while (cNode != NULL) {	
+	//	if (data == GetData(cNode)) return; // 데이터 중복을 허용하지 않음
+	//	pNode = cNode;	
+	//	if (GetData(cNode) > data) cNode = GetLeftSubTree(cNode);
+	//	else cNode = GetRightSubTree(cNode);
+	//}
+	//nNode = MakeBTreeNode();
+	//SetData(nNode, data);
+	//if (pNode != NULL) {
+	//	if (data < GetData(pNode)) MakeLeftSubTree(pNode, nNode);
+	//	else MakeRightSubTree(pNode, nNode);
+	//}
+	//else *pRoot = nNode;
 }
 BTreeNode * BSTSearch(BTreeNode * bst, BSTData target)
 {
@@ -50,13 +64,14 @@ BTreeNode * BSTRemove(BTreeNode ** pRoot, BSTData target)
 	BTreeNode *pNode = pvRoot;
 	BTreeNode *cNode = *pRoot;
 	BTreeNode *dNode;
-
-	ChangeRightSubTree(pvRoot, *pRoot);
+	//pRoot를 pvRoot의 오른쪽 하위 노드로 둔다.
+	ChangeRightSubTree(pvRoot, *pRoot); 
 	while (cNode != NULL && GetData(cNode) != target) {
 		pNode = cNode;
 		if (target < GetData(cNode)) cNode = GetLeftSubTree(cNode);
 		else cNode = GetRightSubTree(cNode);
 	}
+	//No Target
 	if (cNode == NULL) return NULL;
 	dNode = cNode;
 	//삭제 대상이 단말 노드인 경우
@@ -93,7 +108,7 @@ BTreeNode * BSTRemove(BTreeNode ** pRoot, BSTData target)
 	}
 	//삭제 노드가 루트 노드인 경우에 대한 추가적인 처리
 	if (GetRightSubTree(pvRoot) != *pRoot) *pRoot = GetRightSubTree(pvRoot);
-	free(pvRoot);
+	free(pvRoot); 
 	return dNode;
 }
 void ShowIntData(int data) {

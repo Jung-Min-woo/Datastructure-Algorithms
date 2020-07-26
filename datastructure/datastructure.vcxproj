@@ -19,11 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AVLRebalance.c" />
     <ClCompile Include="BinarySearchMain.c" />
     <ClCompile Include="BinarySearchTree.c" />
     <ClCompile Include="BinaryTree.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AVLRebalance.h" />
     <ClInclude Include="BinarySearchTree.h" />
     <ClInclude Include="BinaryTree.h" />
   </ItemGroup>

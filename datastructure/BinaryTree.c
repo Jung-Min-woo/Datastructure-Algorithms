@@ -62,7 +62,6 @@ BTreeNode * RemoveLeftSubTree(BTreeNode * bt)
 	}
 	return delNode;
 }
-
 BTreeNode * RemoveRightSubTree(BTreeNode * bt)
 {
 	BTreeNode *delNode = NULL;
@@ -72,12 +71,10 @@ BTreeNode * RemoveRightSubTree(BTreeNode * bt)
 	}
 	return delNode;
 }
-
 void ChangeLeftSubTree(BTreeNode * main, BTreeNode * sub)
 {
 	main->left = sub;//replace main->left :: sub 
 }
-
 void ChangeRightSubTree(BTreeNode * main, BTreeNode * sub)
 {
 	main->right = sub;
