@@ -1,5 +1,5 @@
-#include <cstdio>
-#include <cstdlib>
+#include <stdio.h>
+#include <stdlib.h>
 #include "Person.h"
 #include "Table2.h"
 
@@ -10,6 +10,6 @@ int main(void) {
 	Table mytbl;
 	Person *np, *sp, *rp;
 	TBLInit(&mytbl, MyHashFunc);
-	np = MakePersonData(900254, "Lee", "Seoul");
-	TBLInsert(&mytbl, GetSSN(np), np);
+	//np = MakePersonData(900254, "Lee", "Seoul");
+	//TBLInsert(&mytbl, GetSSN(np), np);
 }

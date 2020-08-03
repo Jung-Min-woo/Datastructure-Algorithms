@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include "DLinkedList.h"
 
-void TBLInit(Table * pt, HashFunc * f)
+void TBLInit(Table * pt, HashFunc f)
 {
 	int i;
 	for (i = 0; i < MAX_TBL; i++) ListInit(&pt->tbl[i]);
@@ -34,7 +34,7 @@ Value TBLDelete(Table * pt, Key k)
 			while(LNext(&pt->tbl[hv], &cSlot))
 				if (cSlot.key == k) {
 					LRemove(&pt->tbl[hv]);
-					return cSlot;
+					return cSlot.val;
 				}
 		}
 	}
