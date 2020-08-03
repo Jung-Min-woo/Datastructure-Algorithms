@@ -19,9 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ChainedTableMain.c" />
     <ClCompile Include="DLinkedList.c" />
     <ClCompile Include="Person.c" />
-    <ClCompile Include="SimpleHashMain.c" />
     <ClCompile Include="Slot2.c" />
     <ClCompile Include="Table2.c" />
   </ItemGroup>

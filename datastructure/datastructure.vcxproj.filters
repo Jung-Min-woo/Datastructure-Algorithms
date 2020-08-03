@@ -18,9 +18,6 @@
     <ClCompile Include="Person.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="SimpleHashMain.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="Slot2.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -28,6 +25,9 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Table2.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="ChainedTableMain.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
