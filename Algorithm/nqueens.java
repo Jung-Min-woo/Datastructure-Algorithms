@@ -20,7 +20,7 @@ class Checkerboard{
         for(int i = 0; i < size ; i++){
 
         }
-
+        
     }
     public boolean checkColumn(Position criterion){
         int x = criterion.getX();
