@@ -35,7 +35,7 @@ class AList<E> implements List<E> {
     /** Insert "it" at pos */
     public void insert(int pos, E it){
         assert listSize < maxSize : "List capacity exceeded";
-        assert pos>=0 && pos < listSize : "Invalid pos input";
+        assert pos>=0 && pos <= listSize : "Invalid pos input";
         for(int i = listSize ; i > pos ; i-- ){
             listArray[i] = listArray[i-1];
         }
@@ -58,7 +58,18 @@ class AList<E> implements List<E> {
         listSize--;
         return it;
     }
-    
+
+    /** Remove at "pos" and return the current element */
+    public E remove(int pos){
+        if( pos <0 || pos>= listSize ) return null;
+        E it = listArray[pos];
+        for(int i=pos; i<listSize-1 ; i++){
+            listArray[i] = listArray[i+1];
+        }
+        listSize--;
+        return it;
+    }
+
     public void moveToStart() {curr = 0;}
     public void moveToEnd() {curr = listSize;}
     public void moveToPos(int pos) {
