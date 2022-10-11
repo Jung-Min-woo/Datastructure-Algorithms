@@ -15,13 +15,13 @@ public class listmain{
         printList(list1);
 
 
-        AList<String> list2 = new AList<>();
-        list2.insert(0, "test");
-        list2.insert(0, "sample");  
-        list2.insert(2, "test2");
-        list2.insert(0,"String");
+        LList<String> list2 = new LList<>();
+        list2.insert("test");
+        list2.insert("sample");  
+        list2.insert("test2");
+        list2.insert("String");
         list2.append("asdf");
-        list2.remove(1);
+        list2.remove();
         printList(list2);
     }
 

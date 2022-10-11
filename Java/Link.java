@@ -12,7 +12,7 @@ class Link<E> {
         next = nextVal;
     }
     
-    public Link<E> getnext() {return next;}
+    public Link<E> next() {return next;}
     public Link<E> setNext(Link<E> nextVal){
         return next = nextVal;
     }
